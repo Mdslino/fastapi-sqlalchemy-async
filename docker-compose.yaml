@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  database:
+    image: library/postgres:alpine
+    container_name: database
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: async_sqlalchemy
