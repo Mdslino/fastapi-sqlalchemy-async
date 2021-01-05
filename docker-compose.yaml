@@ -1,6 +1,16 @@
 version: '3.8'
 
 services:
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000:80
+    env_file:
+      - .env
+
   database:
     image: library/postgres:alpine
     container_name: database
